@@ -1,33 +1,33 @@
 // src/pages/Settings.jsx
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 function Settings() {
   const [settings, setSettings] = useState({
     notifications: true,
     emailAlerts: false,
     publicProfile: true,
-    preferredPosition: 'MF',
-    language: 'ko'
-  })
+    preferredPosition: "MF",
+    language: "ko",
+  });
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target
+    const { name, value, type, checked } = e.target;
     setSettings({
       ...settings,
-      [name]: type === 'checkbox' ? checked : value
-    })
-  }
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
 
   return (
     <div className="container">
-      <h2 className="fw-bold mb-4">⚙️ 설정</h2>
-      
+      <h2 className="fw-bold mb-4">설정</h2>
+
       <div className="row">
         <div className="col-md-8">
           <div className="card shadow-sm">
             <div className="card-body">
               <h5 className="card-title mb-4">알림 설정</h5>
-              
+
               <div className="mb-3">
                 <div className="form-check form-switch">
                   <input
@@ -106,13 +106,15 @@ function Settings() {
               <h5 className="card-title">계정 정보</h5>
               <p className="text-muted">이메일: user@example.com</p>
               <p className="text-muted">가입일: 2024-01-01</p>
-              <button className="btn btn-outline-secondary btn-sm">비밀번호 변경</button>
+              <button className="btn btn-outline-secondary btn-sm">
+                비밀번호 변경
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Settings
+export default Settings;

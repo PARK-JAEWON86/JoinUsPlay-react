@@ -1,31 +1,31 @@
 // src/pages/Report.jsx
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 function Report() {
   const [report, setReport] = useState({
-    type: '',
-    target: '',
-    description: '',
-    evidence: ''
-  })
+    type: "",
+    target: "",
+    description: "",
+    evidence: "",
+  });
 
-  const [submitted, setSubmitted] = useState(false)
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setReport({ ...report, [name]: value })
-  }
+    const { name, value } = e.target;
+    setReport({ ...report, [name]: value });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('신고 제출:', report)
-    setSubmitted(true)
-  }
+    e.preventDefault();
+    console.log("신고 제출:", report);
+    setSubmitted(true);
+  };
 
   return (
     <div className="container">
-      <h2 className="fw-bold mb-4">🚨 신고하기</h2>
-      
+      <h2 className="fw-bold mb-4">신고하기</h2>
+
       {!submitted ? (
         <div className="row">
           <div className="col-md-8">
@@ -85,10 +85,14 @@ function Report() {
                       onChange={handleChange}
                       accept="image/*,.pdf,.txt"
                     />
-                    <div className="form-text">스크린샷, 채팅 기록 등을 첨부할 수 있습니다.</div>
+                    <div className="form-text">
+                      스크린샷, 채팅 기록 등을 첨부할 수 있습니다.
+                    </div>
                   </div>
 
-                  <button type="submit" className="btn btn-danger">신고 제출</button>
+                  <button type="submit" className="btn btn-danger">
+                    신고 제출
+                  </button>
                 </form>
               </div>
             </div>
@@ -117,7 +121,7 @@ function Report() {
           <p>신고해 주셔서 감사합니다. 검토 후 결과를 알려드리겠습니다.</p>
           <hr />
           <p className="mb-0">
-            <button 
+            <button
               className="btn btn-outline-success btn-sm"
               onClick={() => setSubmitted(false)}
             >
@@ -127,7 +131,7 @@ function Report() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default Report
+export default Report;

@@ -1,30 +1,30 @@
 // src/pages/History.jsx
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function History() {
   const [matches] = useState([
     {
-      id: '20250727-01',
-      date: '2025-07-27',
-      team: 'Seoul Stars',
-      opponent: 'Busan Blitz',
-      result: '승리 3:1',
-      reviewed: true
+      id: "20250727-01",
+      date: "2025-07-27",
+      team: "Seoul Stars",
+      opponent: "Busan Blitz",
+      result: "승리 3:1",
+      reviewed: true,
     },
     {
-      id: '20250720-02',
-      date: '2025-07-20',
-      team: 'Seoul Stars',
-      opponent: 'Incheon Eagles',
-      result: '패배 1:2',
-      reviewed: false
-    }
-  ])
+      id: "20250720-02",
+      date: "2025-07-20",
+      team: "Seoul Stars",
+      opponent: "Incheon Eagles",
+      result: "패배 1:2",
+      reviewed: false,
+    },
+  ]);
 
   return (
     <div className="container">
-      <h2 className="fw-bold mb-4">📅 내 매치 히스토리</h2>
+      <h2 className="fw-bold mb-4">내 매치 히스토리</h2>
       <table className="table table-striped">
         <thead>
           <tr>
@@ -46,7 +46,10 @@ function History() {
                 {match.reviewed ? (
                   <span className="text-success">작성 완료</span>
                 ) : (
-                  <Link to={`/review/${match.id}`} className="btn btn-sm btn-outline-primary">
+                  <Link
+                    to={`/review/${match.id}`}
+                    className="btn btn-sm btn-outline-primary"
+                  >
                     작성하기
                   </Link>
                 )}
@@ -56,7 +59,7 @@ function History() {
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
-export default History
+export default History;
